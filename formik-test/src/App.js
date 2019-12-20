@@ -1,11 +1,11 @@
 import React from 'react';
 import { Formik, Field, Form } from 'formik';
-import { TextField, Button, Checkbox } from '@material-ui/core';
+import { TextField, Button, Checkbox, Radio } from '@material-ui/core';
 
 const App: React.FC = () => {
   return (
     <div>
-      <Formik initialValues={{ firstName: '', lastName: '', ageHigherThanEighteen: false, cakes: []}}
+      <Formik initialValues={{ firstName: '', lastName: '', ageHigherThanEighteen: false, cakes: [], day: '' }}
         onSubmit={(data, { setSubmitting }) => {
           setSubmitting(true);
           // Fazer uma chamada async da API
@@ -22,17 +22,25 @@ const App: React.FC = () => {
               <Field placeholder='Sobrenome' name="lastName" type="input" as={TextField} />
             </div>
 
-            <label>Maior que 18 anos</label>
+            <div>Maior que 18 anos</div>
             <div>
               <Field name='ageHigherThanEighteen' type='checkbox' as={Checkbox} />
             </div>
 
-            <label>Escolha os bolos que deseja comer</label>
+            <div>Escolha os bolos que deseja comer</div>
             <div>
               <Field name='cakes' value='Chocolate' type='checkbox' as={Checkbox} />
               <Field name='cakes' value='Baunilha' type='checkbox' as={Checkbox} />
               <Field name='cakes' value='Morango' type='checkbox' as={Checkbox} />
               <Field name='cakes' value='Banana' type='checkbox' as={Checkbox} />
+            </div>
+
+            <div>Escolha o dia da entrega</div>
+            <div>
+              <Field name='day' value='Segunda' type='radio' as={Radio} />
+              <Field name='day' value='Terça' type='radio' as={Radio} />
+              <Field name='day' value='Quarta' type='radio' as={Radio} />
+              <Field name='day' value='Quinta' type='radio' as={Radio} />
             </div>
 
             <pre>{JSON.stringify(values, null, 2)}</pre>
