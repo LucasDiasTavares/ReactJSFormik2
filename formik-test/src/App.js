@@ -1,6 +1,6 @@
 import React from 'react';
 import { Formik } from 'formik';
-import { TextField } from '@material-ui/core';
+import { TextField, Button } from '@material-ui/core';
 
 const App: React.FC = () => {
   return (
@@ -12,6 +12,13 @@ const App: React.FC = () => {
         {({ values, handleChange, handleBlur, handleSubmit }) => (
           <form onSubmit={handleSubmit} >
             <TextField name='firstName' value={values.firstName} onChange={handleChange} onBlur={handleBlur} />
+
+            <pre>{JSON.stringify(values, null, 2)}</pre>
+
+            <div>
+              <Button type="submit">Enviar</Button>
+            </div>
+
           </form>
         )}
 

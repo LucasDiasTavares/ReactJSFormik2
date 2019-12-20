@@ -22,8 +22,9 @@ Se o meu campo precisar começar com algum valor inicial. `initialValues={{ firs
 Caso contrario posso passar ele vazio `initialValues={{ firstName: '' }}`
 
 Quando eu der submit no meu form devo mandar os dados. `onSubmit={(data) => {console.log(data);}} >`
+<hr>
 
-
+Utilizando `<pre>{JSON.stringify(values, null, 2)}</pre>` Dentro do meu form eu consigo ter um visual do que eu estou digitando e se está sendo utilizado dentro da variável correta, ajuda muito para fazer debug, sem precisar ficar dando submit no form para ver no console.log
 <hr>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
