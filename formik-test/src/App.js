@@ -1,6 +1,6 @@
 import React from 'react';
-import { Formik, Field, Form, useField } from 'formik';
-import { TextField, Button, Checkbox, Radio, FormControlLabel } from '@material-ui/core';
+import { Formik, Field, Form } from 'formik';
+import { TextField, Button, Checkbox, Radio } from '@material-ui/core';
 
 
 const App: React.FC = () => {
