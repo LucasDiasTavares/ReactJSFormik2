@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik, Field } from 'formik';
+import { Formik, Field, Form } from 'formik';
 import { TextField, Button } from '@material-ui/core';
 
 const App: React.FC = () => {
@@ -12,8 +12,8 @@ const App: React.FC = () => {
         setSubmitting(false);
       }} >
 
-        {({ values, isSubmitting, handleChange, handleBlur, handleSubmit }) => (
-          <form onSubmit={handleSubmit} >
+        {({ values, isSubmitting }) => (
+          <Form>
             <div>
               <Field placeholder='firstName' name="firstName" type="input" as={TextField} />
             </div>
@@ -27,7 +27,7 @@ const App: React.FC = () => {
               <Button disabled={isSubmitting} type="submit">Enviar</Button>
             </div>
 
-          </form>
+          </Form>
         )}
 
       </Formik>

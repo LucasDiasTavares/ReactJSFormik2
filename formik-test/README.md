@@ -56,6 +56,11 @@ Agora se eu precisar de vários campos no meu formulário, parar não ficar copi
 <hr>
 
 Utilizando `<pre>{JSON.stringify(values, null, 2)}</pre>` Dentro do meu form eu consigo ter um visual do que eu estou digitando e se está sendo utilizado dentro da variável correta, ajuda muito para fazer debug, sem precisar ficar dando submit no form para ver no console.log
+
+<hr>
+
+Alterando o meu form para um Form do formik deste modo não preciso mais ficar especificando as variáveis handleChange, handleBlur, handleSubmit ele já tem elas por padrão e fica mais padronizado o código.
+
 <hr>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
