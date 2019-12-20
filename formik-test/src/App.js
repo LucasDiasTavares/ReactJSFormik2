@@ -1,12 +1,19 @@
 import React from 'react';
-import { Formik, Field, Form } from 'formik';
-import { TextField, Button, Checkbox, Radio } from '@material-ui/core';
+import { Formik, Field, Form, FieldArray } from 'formik';
+import { TextField, Button, Checkbox, Radio, Select, MenuItem } from '@material-ui/core';
 
 
 const App: React.FC = () => {
   return (
     <div>
-      <Formik initialValues={{ firstName: '', lastName: '', ageHigherThanEighteen: false, cakes: [], day: '' }}
+      <Formik initialValues={{
+        firstName: '',
+        lastName: '',
+        ageHigherThanEighteen: false,
+        cakes: [],
+        day: '',
+        pets: [{ type: 'cat', name: 'jarvis', id: Math.random() }]
+      }}
         onSubmit={(data, { setSubmitting }) => {
           setSubmitting(true);
           // Fazer uma chamada async da API
@@ -22,8 +29,6 @@ const App: React.FC = () => {
             <div>
               <Field placeholder='Sobrenome' name="lastName" type="input" as={TextField} />
             </div>
-
-
             <div>
               <label>Maior que 18 anos</label>
               <Field name='ageHigherThanEighteen' type='checkbox' as={Checkbox} />
@@ -52,6 +57,35 @@ const App: React.FC = () => {
               <label>Quinta</label>
               <Field name='day' value='Quinta' type='radio' as={Radio} />
             </div>
+
+            <FieldArray name="pets">
+              {arrayHelpers => (
+                <div>
+                  <Button onClick={() => arrayHelpers.push({
+                    type: "",
+                    name: "",
+                    id: Math.random()
+                  })}>Adicionar Pet</Button>
+                  {values.pets.map((pet, index) => {
+
+                    return (
+                      <div key={pet.id}>
+                        <Field placeholder='Nome do pet'
+                          name={`pets.${index}.name`}
+                          type="input"
+                          as={TextField} />
+                        <Field name={`pets.${index}.type`} type='select' as={Select}>
+                          <MenuItem value='cat'>cat</MenuItem>
+                          <MenuItem value='dog'>dog</MenuItem>
+                          <MenuItem value='snake'>snake</MenuItem>
+                        </Field>
+                        <Button onClick={() => arrayHelpers.remove(index)} >X</Button>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </FieldArray>
 
             <pre>{JSON.stringify(values, null, 2)}</pre>
 

@@ -60,7 +60,7 @@ Checkbox:
 
 - Multiplos checkbox inicializo como `cake: [] `. Então para cada checkbox eu crio com o mesmo name='cakes', extremamente importante que o name sejam iguais e conforme for criando novos Field só ir alterando o value: value='banana', value='morango', value='etc'. Exemplo do código: `<Field name='cakes' value='Chocolate' type='checkbox' as={Checkbox} />`
 
-Raio:
+Radio:
 - Para criar um Radio button ele é inicializado `day: ''`, como fosse um campo normal. Então para cada radio eu crio com o mesmo name='day', extremamente importante que o name sejam iguais e conforme for criando novos Field só ir alterando o value: value='Segunda', value='Terça', value='etc'. Exemplo do código: `<Field name='day' value='Segunda' type='radio' as={Radio} />`
 
 <hr>
