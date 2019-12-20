@@ -47,7 +47,11 @@ Enseguida vou até o meu form e faço as seguinte alterações:
     </form>
 )}
 ```
-Passo a variável junto das demais `{ values, isSubmitting, handleChange, handleBlur, handleSubmit }`, e no meu botão utilizo está variavel dentro de uma propriedade do mesmo chamado disable, assim ele irá ativar ou desativar o botão automaticamente `<Button disable={isSubmitting} type="submit">Enviar</Button>`
+Passo a variável junto das demais `{ values, isSubmitting, handleChange, handleBlur, handleSubmit }`, e no meu botão utilizo está variavel dentro de uma propriedade do mesmo chamado disable, assim ele irá ativar ou desativar o botão automaticamente `<Button disabled={isSubmitting} type="submit">Enviar</Button>`
+
+<hr>
+
+Agora se eu precisar de vários campos no meu formulário, parar não ficar copiando e colando eu posso utilizar do formik o componente Field `<Field name="firstName" type="input" />`, deste modo estou dizendo ao formik que eu quero um input com name de first name e com todas aquelas propriedades handleChange, handleBlur, handleSubmit e não preciso passar elas manualmente como foi feita no exemplo do TextField. Porém deste modo não estou utilizando Material-UI e eu quero usar, então devo apenas passar como props as={TextField}, `<Field name="firstName" type="input" as={TextField} />` pronto agora tenho um código mais limpo utilizando Material-UI no meu Field.
 
 <hr>
 
