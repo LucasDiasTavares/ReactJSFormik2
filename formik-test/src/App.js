@@ -1,6 +1,7 @@
 import React from 'react';
-import { Formik, Field, Form } from 'formik';
-import { TextField, Button, Checkbox, Radio } from '@material-ui/core';
+import { Formik, Field, Form, useField } from 'formik';
+import { TextField, Button, Checkbox, Radio, FormControlLabel } from '@material-ui/core';
+
 
 const App: React.FC = () => {
   return (
@@ -22,24 +23,33 @@ const App: React.FC = () => {
               <Field placeholder='Sobrenome' name="lastName" type="input" as={TextField} />
             </div>
 
-            <div>Maior que 18 anos</div>
+
             <div>
+              <label>Maior que 18 anos</label>
               <Field name='ageHigherThanEighteen' type='checkbox' as={Checkbox} />
             </div>
 
             <div>Escolha os bolos que deseja comer</div>
             <div>
+              <label>Chocolate</label>
               <Field name='cakes' value='Chocolate' type='checkbox' as={Checkbox} />
+              <label>Baunilha</label>
               <Field name='cakes' value='Baunilha' type='checkbox' as={Checkbox} />
+              <label>Morango</label>
               <Field name='cakes' value='Morango' type='checkbox' as={Checkbox} />
+              <label>Banana</label>
               <Field name='cakes' value='Banana' type='checkbox' as={Checkbox} />
             </div>
 
             <div>Escolha o dia da entrega</div>
             <div>
+              <label>Segunda</label>
               <Field name='day' value='Segunda' type='radio' as={Radio} />
+              <label>Terça</label>
               <Field name='day' value='Terça' type='radio' as={Radio} />
+              <label>Quarta</label>
               <Field name='day' value='Quarta' type='radio' as={Radio} />
+              <label>Quinta</label>
               <Field name='day' value='Quinta' type='radio' as={Radio} />
             </div>
 
