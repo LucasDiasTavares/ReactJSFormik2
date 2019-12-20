@@ -54,6 +54,13 @@ Passo a variável junto das demais `{ values, isSubmitting, handleChange, handle
 Agora se eu precisar de vários campos no meu formulário, parar não ficar copiando e colando eu posso utilizar do formik o componente Field `<Field name="firstName" type="input" />`, deste modo estou dizendo ao formik que eu quero um input com name de first name e com todas aquelas propriedades handleChange, handleBlur, handleSubmit e não preciso passar elas manualmente como foi feita no exemplo do TextField. Porém deste modo não estou utilizando Material-UI e eu quero usar, então devo apenas passar como props as={TextField}, `<Field name="firstName" type="input" as={TextField} />` pronto agora tenho um código mais limpo utilizando Material-UI no meu Field.
 
 <hr>
+Checkbox:
+- Simples checkbox inicializo como `ageHigherThanEighteen: false`. Exemplo do código: `<Field name='ageHigherThanEighteen' type='checkbox' as={Checkbox} />`
+
+- Multiplos checkbox inicializo como `cake: [] `. Então para cada checkbox eu crio com o mesmo name='cakes', extremamente importante que o name sejam iguais e conforme for criando novos Field só ir alterando o value: value='banana', value='morango', value='etc'. Exemplo do código: `<Field name='cakes' value='Chocolate' type='checkbox' as={Checkbox} />`
+            
+
+<hr>
 
 Utilizando `<pre>{JSON.stringify(values, null, 2)}</pre>` Dentro do meu form eu consigo ter um visual do que eu estou digitando e se está sendo utilizado dentro da variável correta, ajuda muito para fazer debug, sem precisar ficar dando submit no form para ver no console.log
 
